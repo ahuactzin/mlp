@@ -1,0 +1,3 @@
+,Step,Rows,Columns,Column Names
+0,Initialization,25094,21,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'CP', 'CP Aval', 'Ingresos', 'Egresos', 'Score CC', 'Unidad', 'Incobrable', 'Deficit', 'IngresoPercapita', 'TipoZona', 'CP_Latitud', 'CP_Longitud', 'CP_Aval_Latitud', 'CP_Aval_Longitud', 'Odds', 'Mes inicial']"
+1,Filtered by max date,25094,21,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'CP', 'CP Aval', 'Ingresos', 'Egresos', 'Score CC', 'Unidad', 'Incobrable', 'Deficit', 'IngresoPercapita', 'TipoZona', 'CP_Latitud', 'CP_Longitud', 'CP_Aval_Latitud', 'CP_Aval_Longitud', 'Odds', 'Mes inicial']"

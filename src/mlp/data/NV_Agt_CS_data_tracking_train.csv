@@ -1,0 +1,3 @@
+,Step,Rows,Columns,Column Names
+0,Initialization,39950,10,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'Ingresos', 'Egresos', 'Incobrable', 'Score Agt', 'Mes inicial']"
+1,Filtered by max date,39950,10,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'Ingresos', 'Egresos', 'Incobrable', 'Score Agt', 'Mes inicial']"

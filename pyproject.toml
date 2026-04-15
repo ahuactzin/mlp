@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlp"
+version = "0.1.0"
+description = "Machine Learning Pipeline (MLP): training and experimentation for Cashia"
+readme = "README.md"
+requires-python = ">=3.11"
+
+authors = [
+  { name = "Juan Manuel Ahuactzin" }
+]
+
+dependencies = [
+  "cashia-core==1.1.0",
+  "pandas==1.5.3",
+  "numpy==1.26.0",
+  "scikit-learn>=1.2.2,<1.3",
+  "matplotlib",
+  "imbalanced-learn",
+  "joblib"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
