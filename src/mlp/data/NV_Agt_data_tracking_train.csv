@@ -1,3 +1,0 @@
-,Step,Rows,Columns,Column Names
-0,Initialization,38862,15,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'CP', 'Ingresos', 'Egresos', 'Unidad', 'Incobrable', 'Score Agt', 'TipoZona', 'CP_Latitud', 'CP_Longitud', 'Mes inicial']"
-1,Filtered by max date,38862,15,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'CP', 'Ingresos', 'Egresos', 'Unidad', 'Incobrable', 'Score Agt', 'TipoZona', 'CP_Latitud', 'CP_Longitud', 'Mes inicial']"

@@ -1,3 +1,0 @@
-,Step,Rows,Columns,Column Names
-0,Initialization,25313,13,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'Ingresos', 'Egresos', 'Score CC', 'Incobrable', 'Deficit', 'IngresoPercapita', 'Odds', 'Mes inicial']"
-1,Filtered by max date,25313,13,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'Ingresos', 'Egresos', 'Score CC', 'Incobrable', 'Deficit', 'IngresoPercapita', 'Odds', 'Mes inicial']"

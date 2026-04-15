@@ -1,3 +1,0 @@
-,Step,Rows,Columns,Column Names
-0,Initialization,55386,14,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'Ingresos', 'Egresos', 'Ciclo', 'Monto_Ant', 'Frecuencia_Ant', 'Incobrable', 'Score_Ant', 'Score Agt', 'Mes inicial']"
-1,Filtered by max date,55386,14,"['Fecha Inicial', 'Monto', 'Edad Solicitud', 'Genero', 'Dependientes', 'Ingresos', 'Egresos', 'Ciclo', 'Monto_Ant', 'Frecuencia_Ant', 'Incobrable', 'Score_Ant', 'Score Agt', 'Mes inicial']"
