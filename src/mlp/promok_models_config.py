@@ -1,6 +1,6 @@
 
 import pandas as pd
-from cashia_model.model.promok_model import *
+from cashia_model.promok_model import *
 import os
 
 feature_engineering = "standardization"
@@ -28,10 +28,10 @@ configuration_file_name = "CashIA_ConfFile.xlsx"
 # conf_column = "RNV_Agt"
 # conf_column = "NV_CC"
 # conf_column = "RNV_CC"
-# conf_column = "NV_Agt_CS"
+conf_column = "NV_Agt_CS"
 # conf_column = "RNV_Agt_CS"
 # conf_column = "NV_CC_CS"
-conf_column = "RNV_CC_CS"
+# conf_column = "RNV_CC_CS"
 
 
 stats_file_name = "Statistics.xlsx"
@@ -58,3 +58,16 @@ models_to_test = [#ModelToTest("Random_Forest_SMOTE", {'criterion':'gini', 'boot
                   #ModelToTest("KNN", {'n_neighbors':22}, model_conf=conf_column),
                   #ModelToTest("KNN", {'n_neighbors':23}, model_conf=conf_column),
                   ]
+
+MLP_RESOURCE_KEYS = {
+    "inflation_table": "mlp/inputs/tablaDeInflacion.csv"
+}
+
+def get_mlp_resource_key(name: str) -> str:
+    try:
+        return MLP_RESOURCE_KEYS[name]
+    except KeyError as e:
+        available = ", ".join(sorted(MLP_RESOURCE_KEYS.keys()))
+        raise KeyError(
+            f"Unknown MLP resource: '{name}'. Available: {available}"
+        ) from e
