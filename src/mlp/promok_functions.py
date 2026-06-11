@@ -2,12 +2,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import matplotlib.patches as mpatches
 import json
 import copy
 import sys
 
-from sklearn.preprocessing import OneHotEncoder
 from sklearn.metrics import confusion_matrix, precision_score, recall_score
 from sklearn.metrics import f1_score, accuracy_score, roc_auc_score, ConfusionMatrixDisplay
 
