@@ -28,10 +28,10 @@ configuration_file_name = "CashIA_ConfFile.xlsx"
 # conf_column = "RNV_Agt"
 # conf_column = "NV_CC"
 # conf_column = "RNV_CC"
-conf_column = "NV_Agt_CS"
+# conf_column = "NV_Agt_CS"
 # conf_column = "RNV_Agt_CS"
 # conf_column = "NV_CC_CS"
-# conf_column = "RNV_CC_CS"
+conf_column = "RNV_CC_CS"
 
 
 stats_file_name = "Statistics.xlsx"
