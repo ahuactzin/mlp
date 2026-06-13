@@ -5,6 +5,7 @@ import seaborn as sns
 import json
 import copy
 import sys
+from pathlib import Path
 
 from sklearn.metrics import confusion_matrix, precision_score, recall_score
 from sklearn.metrics import f1_score, accuracy_score, roc_auc_score, ConfusionMatrixDisplay
@@ -115,7 +116,7 @@ class ModelsStats:
         """        
         self.values.append(tuple(element.fields.values()))
 
-    def add_and_print_stats(self, y_true, y_pred, method, parameters, evaluation, display=False):
+    def add_and_print_stats(self, y_true, y_pred, method, parameters, evaluation, display=False, filename=None):
         """Agrega, al conjunto de estadísticas, las estadísticas de un modelo y las imprime
 
         Args:
@@ -160,7 +161,7 @@ class ModelsStats:
         if (display):
             self.print_problem_info(new_stats)
             self.print_scores(new_stats, evaluation, method)
-            self.display_confusion_matrix(cm)
+            self.display_confusion_matrix(cm, show=True, filename=filename)
 
     def print_problem_info(self, new_stats):
         """Imprime la información del modelo, cuantos pagados, cuantos impagados y el tamaño del juego de datos
@@ -193,18 +194,41 @@ class ModelsStats:
         print("Model rejection rate", "{:,.1f}%".format(stats.fields['Rejection rate']*100))
         print("False negative rate", "{:,.1f}%".format(stats.fields['False negative rate']*100))
 
-    def display_confusion_matrix(self, cm):
-        """Imprime la matriz de confución obtenida por el entrenaiento de un moelo
+
+
+    def display_confusion_matrix(
+        self,
+        cm,
+        show=True,
+        filename=None,
+    ):
+        """Muestra la matriz de confusión obtenida por el entrenamiento
+        de un modelo.
 
         Args:
-            y_true (vector): vector con la variable objetivo real
-            y_pred (vector): vector con la variable predecida por el modelo
-        """        
-        
-        cm_display = ConfusionMatrixDisplay(cm).plot()
-        plt.show()
+            cm (array-like): Matriz de confusión.
+            filename (str, optional): Nombre del archivo donde se guardará
+                la imagen (por ejemplo 'confusion_matrix.png').
+                Si es None no se guarda.
+            show (bool, optional): Si es True muestra la figura en pantalla.
+                Por defecto es True.
 
-        return cm
+        Returns:
+            array-like: La matriz de confusión recibida.
+        """
+
+        disp = ConfusionMatrixDisplay(cm)
+        disp.plot()
+        fig = plt.gcf()
+
+        if filename is not None:
+            output_path = Path("./figures") / filename
+            fig.savefig(output_path, dpi=300, bbox_inches="tight")
+
+        if show:
+            plt.show()
+        else:
+            plt.close(fig)
 
 class ModelsTester:
     """Clase que prueba varios modelos de predicción
@@ -464,21 +488,42 @@ def apply_classifier_with_SMOTE(clf, x_train, y_train, preprocessor=None):
 
     return pipeline
 
-def plot_threshold_evolution(threshold_list, evol_list, title, xlabel, ylabel):
-    """Dibuja la gráfica de la evolución del umbral con respecto a una segunda variable asociada al umbral.
+
+def plot_threshold_evolution(
+    threshold_list,
+    evol_list,
+    title,
+    xlabel,
+    ylabel,
+    filename=None
+):
+    """Dibuja la gráfica de la evolución del umbral con respecto a una
+    segunda variable asociada al umbral.
 
     Args:
         threshold_list (list): Lista con los umbrales.
-        evol_list (list): Lista con la evolución de la variable asociada al umbral.
-        title (str): Título de la gráfica
-        xlabel (srt): Etiqueta de las x
-        ylabel (str): Etiqueta de las y
-    """    
+        evol_list (list): Lista con la evolución de la variable asociada
+            al umbral.
+        title (str): Título de la gráfica.
+        xlabel (str): Etiqueta del eje X.
+        ylabel (str): Etiqueta del eje Y.
+        filename (str, optional): Nombre del archivo donde se guardará
+            la imagen (por ejemplo 'grafica.png'). Si es None no se guarda.
+    """
     fig, ax = plt.subplots(figsize=(6, 4))
-    ax.plot(threshold_list, evol_list, color = "#0A7BBB")
+
+    ax.plot(threshold_list, evol_list, color="#0A7BBB")
     ax.set_title(title)
-    ax.set_ylabel(ylabel)
     ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+
+    # Guarda la figura si se especificó un archivo
+  
+
+    if filename is not None:
+        output_path = Path("./figures") / filename
+        fig.savefig(output_path, dpi=300, bbox_inches="tight")
+
     plt.show()
 
 

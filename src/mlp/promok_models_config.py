@@ -12,10 +12,11 @@ zip_digits = 4
 notes = "zip_digits = "+str(zip_digits)+"  "+local_notes
 
 # Fecha máxima de los datos para el aprendizaje y evaluación
-#max_date =  pd.to_datetime('2023-10-31')
-max_date =  pd.to_datetime('2025-12-30')
-# source_file_name = 'Data Set Cashia V4.csv'
-source_file_name = 'Data Set CashiaV3.csv'
+min_date =  pd.to_datetime('2023-01-01')
+max_date =  pd.to_datetime('2026-05-31')
+source_file_name = 'Data Set Cashia Entrenamiento.csv'
+# source_file_name = 'Data Set Cashia V4.csv' #Not Used
+# source_file_name = 'Data Set CashiaV3.csv'
 # source_file_name = 'Valores Act Rech7.csv'
 #source_file_name = 'Query Nopagos.csv'
 #source_file_name = 'Query RNV Frecuencia Score.csv'
