@@ -59,3 +59,4 @@ src/mlp/config/
 src/mlp/models/
 src/mlp/statistics/
 src/mlp/tablaDeInflacion.csv
+src/mlp/figures/
